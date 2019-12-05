@@ -1,11 +1,16 @@
 package com.example.tradm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -36,16 +41,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void insertItem(int position){
         mExampleList.add(position, new ExampleItem(R.drawable.ic_cake, "New item at position" + position, "This is line 2"));
+        mAdapter.updateList(mExampleList);
         mAdapter.notifyItemInserted(position);
     }
 
     public void removeItem(int position){
         mExampleList.remove(position);
+        mAdapter.updateList(mExampleList);
         mAdapter.notifyItemRemoved(position);
     }
 
     public void changeItem(int position, String text){
         mExampleList.get(position).changeText1(text);
+        mAdapter.updateList(mExampleList);
         mAdapter.notifyItemChanged(position);
     }
 
@@ -99,5 +107,30 @@ public class MainActivity extends AppCompatActivity {
                 removeItem(position);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
     }
 }

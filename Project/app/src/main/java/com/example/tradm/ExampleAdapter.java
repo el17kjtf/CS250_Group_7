@@ -3,6 +3,8 @@ package com.example.tradm;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,10 +12,54 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
+public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> implements Filterable {
     private ArrayList<ExampleItem> mExampleList;
+    private ArrayList<ExampleItem> mExampleListFull;
     private OnItemClickListener mListener;
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    public ArrayList<ExampleItem> updateList(ArrayList<ExampleItem> newList){
+        mExampleListFull.clear();
+        mExampleListFull.addAll(newList);
+        return mExampleListFull;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<ExampleItem> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(mExampleListFull);
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (ExampleItem item : mExampleListFull){
+                   if (item.getmText1().toLowerCase().contains(filterPattern)){
+                       filteredList.add(item);
+                   }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mExampleList.clear();
+            mExampleList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -66,6 +112,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     public ExampleAdapter(ArrayList<ExampleItem> mExampleList) {
         this.mExampleList = mExampleList;
+        mExampleListFull = new ArrayList<>(mExampleList);
     }
 
     @NonNull
