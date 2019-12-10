@@ -10,13 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_offer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="66dp"
+            android:layout_height="72dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
             app:backgroundTint="@color/orange"
@@ -24,8 +23,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.957"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_list"
-            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/ic_add_white_24dp" />
 
         <TextView
@@ -113,17 +110,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ListView
-            android:id="@+id/home_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="409dp"
+            android:layout_height="458dp"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_bar"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
