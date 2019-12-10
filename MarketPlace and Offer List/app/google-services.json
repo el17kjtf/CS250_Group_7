@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "916163772886",
+    "firebase_url": "https://tradm-85a30.firebaseio.com",
+    "project_id": "tradm-85a30",
+    "storage_bucket": "tradm-85a30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916163772886:android:793b80d6e499606d216477",
+        "android_client_info": {
+          "package_name": "com.example.tradm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916163772886-1pnesd99525t4erfvv6q94h3jmlsgio8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tradm",
+            "certificate_hash": "ae5b99d0e9d2b9b6935bf801441209782b38eda6"
+          }
+        },
+        {
+          "client_id": "916163772886-m1a7692n1fre5ofnu5u2ule01am3a9ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRSq32Jhuu6KpRUAjghXJRXRfC3xtkNgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916163772886-m1a7692n1fre5ofnu5u2ule01am3a9ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

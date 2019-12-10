@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="offer_type_array">
+        <item>Item</item>
+        <item>Service</item>
+    </string-array>
+</resources>
