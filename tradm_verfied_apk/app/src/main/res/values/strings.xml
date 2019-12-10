@@ -38,5 +38,12 @@
     <string name="biasindi00">biasindi00</string>
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
+    <string name="apply_now">Apply Now</string>
+    <string name="service_details">Service Details</string>
+    <string name="service_name">Service Name</string>
+    <string name="description">Description</string>
+    <string name="seller_information">Seller Information</string>
+    <string name="item_details">Item Details</string>
+    <string name="item_name">Item Name</string>
 
 </resources>
