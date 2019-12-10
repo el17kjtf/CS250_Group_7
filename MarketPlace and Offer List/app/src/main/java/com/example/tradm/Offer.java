@@ -7,6 +7,7 @@ public class Offer {
     private OfferStat offerStatus;
     private String offerType;
     private int price;
+    private Upload upload;
 
     enum OfferStat{
         Sold, Available, Pending
@@ -16,26 +17,23 @@ public class Offer {
         //empty constructor needed
     }
 
-    public Offer(String title, String description) { //to remove
-        this.title = title;
-        this.description = description;
-    }
-
-    public Offer(String title, String description, OfferStat offerStatus, String offerType, int price) {
+    public Offer(String title, String description, OfferStat offerStatus, String offerType, int price, Upload upload) {
         this.title = title;
         this.description = description;
         this.offerStatus = offerStatus;
         this.offerType = offerType;
         this.price = price;
+        this.upload = upload;
     }
 
-    public Offer(String title, String description, int sellerID, OfferStat offerStatus, String offerType, int price) {
+    public Offer(String title, String description, int sellerID, OfferStat offerStatus, String offerType, int price, Upload upload) {
         this.title = title;
         this.description = description;
         this.sellerID = sellerID;
         this.offerStatus = offerStatus;
         this.offerType = offerType;
         this.price = price;
+        this.upload = upload;
     }
 
     public int getPrice() {
@@ -62,4 +60,7 @@ public class Offer {
         return description;
     }
 
+    public Upload getUpload() {
+        return upload;
+    }
 }
