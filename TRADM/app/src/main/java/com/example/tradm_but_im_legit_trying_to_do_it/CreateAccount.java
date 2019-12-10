@@ -1,5 +1,6 @@
 package com.example.tradm_but_im_legit_trying_to_do_it;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,11 +16,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateAccount extends AppCompatActivity {
-    EditText emailaddr, password;
+    EditText emailaddr, password, stud_ID;
     Button btnSignIn;
     FirebaseAuth mFireBaseAuth;
+    DatabaseReference reff;
+    Member member;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +34,28 @@ public class CreateAccount extends AppCompatActivity {
         mFireBaseAuth = FirebaseAuth.getInstance();
         emailaddr = findViewById(R.id.email_addr);
         password = findViewById(R.id.password);
+        stud_ID = findViewById(R.id.stud_id);
+        member = new Member();
+        reff = FirebaseDatabase.getInstance().getReference().child("Member");
         btnSignIn = findViewById(R.id.create_acc);
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = emailaddr.getText().toString();
                 String pwd = password.getText().toString();
+                String ID = stud_ID.getText().toString();
                 if (email.isEmpty()) {
                     emailaddr.setError("Please enter Email");
                     emailaddr.requestFocus();
                 } else if (pwd.isEmpty()) {
                     password.setError("Please enter Password");
                     password.requestFocus();
-                } else if (email.isEmpty() && pwd.isEmpty()) {
+                } else if (ID.isEmpty()) {
+                    stud_ID.setError("Please enter ID");
+                    stud_ID.requestFocus();
+                } else if (email.isEmpty() && pwd.isEmpty() && ID.isEmpty()) {
                     Toast.makeText(CreateAccount.this, "Fields are empty!", Toast.LENGTH_SHORT).show();
-                } else if (!(email.isEmpty() && pwd.isEmpty())) {
+                } else if (!(email.isEmpty() && pwd.isEmpty() && ID.isEmpty())) {
                     mFireBaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(CreateAccount.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -51,6 +63,9 @@ public class CreateAccount extends AppCompatActivity {
                                 Toast.makeText(CreateAccount.this, "Sign Up Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(CreateAccount.this, Home.class));
+                                member.setID(stud_ID.getText().toString());
+                                member.setEmail(emailaddr.getText().toString());
+                                reff.push().setValue(member);
                             }
                         }
                     });
