@@ -8,36 +8,49 @@
     tools:context=".PopActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65">
 
         <TextView
             android:id="@+id/success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/proximanova_bold"
             android:text="SUCCESS"
-            android:textSize="30sp" />
+            android:textSize="40sp" />
 
         <TextView
+            android:fontFamily="@font/proximanova_regular"
+            android:textSize="20sp"
             android:id="@+id/purchase_done"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Your Purchase has been confirmed!" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-195dp">
+        app:layout_constraintVertical_bias="0.82">
 
         <Button
+            android:fontFamily="@font/proximanova_regular"
             android:id="@+id/gotohome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -60,6 +73,7 @@
             app:layout_constraintGuide_end="183dp" />
 
         <Button
+            android:fontFamily="@font/proximanova_regular"
             android:id="@+id/order_list"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -75,5 +89,16 @@
             app:layout_constraintVertical_bias="0.9" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="234dp"
+        android:layout_height="238dp"
+        android:src="@drawable/ic_check_circle_orange_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
