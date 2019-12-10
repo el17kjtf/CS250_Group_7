@@ -45,5 +45,6 @@
     <string name="seller_information">Seller Information</string>
     <string name="item_details">Item Details</string>
     <string name="item_name">Item Name</string>
+    <string name="apply">Apply</string>
 
 </resources>
