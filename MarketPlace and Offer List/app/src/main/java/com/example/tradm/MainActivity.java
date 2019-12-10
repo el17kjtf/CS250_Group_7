@@ -76,8 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 Offer offer = documentSnapshot.toObject(Offer.class);
                 String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
-                Toast.makeText(MainActivity.this,
-                        "Position: " + position + "ID: " + id, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, OfferDetail.class);
+                intent.putExtra("OfferPath", path);
+                startActivity(intent);
             }
         });
     }
