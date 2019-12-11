@@ -29,10 +29,7 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
     protected void onBindViewHolder(@NonNull OfferHolder holder, int position, @NonNull Offer model) {
         holder.textViewTitle.setText(model.getTitle());
         holder.textViewDescription.setText(model.getDescription());
-        holder.textViewOfferStatus.setText(model.getOfferStatus().name());
-        holder.textViewOfferType.setText(model.getOfferType());
-        holder.textViewPrice.setText(String.valueOf(model.getPrice()));
-        Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
+        //Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
         Picasso.get().load(model.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(holder.imageView);
     }
 
@@ -50,19 +47,15 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
     class OfferHolder extends RecyclerView.ViewHolder{
         TextView textViewTitle;
         TextView textViewDescription;
-        TextView textViewOfferType;
-        TextView textViewPrice;
-        TextView textViewOfferStatus;
         ImageView imageView;
+        ImageView imageViewArrow;
 
         public OfferHolder(@NonNull View itemView) {
             super(itemView);
-            textViewTitle = itemView.findViewById(R.id.text_view_title);
-            textViewDescription = itemView.findViewById(R.id.text_view_description);
-            textViewOfferStatus = itemView.findViewById(R.id.text_view_offer_status);
-            textViewOfferType = itemView.findViewById(R.id.text_view_offer_type);
-            textViewPrice = itemView.findViewById(R.id.text_view_price);
-            imageView = itemView.findViewById(R.id.image_view_upload);
+            textViewTitle = itemView.findViewById(R.id.item_title);
+            textViewDescription = itemView.findViewById(R.id.item_content);
+            imageView = itemView.findViewById(R.id.item_pic);
+            imageViewArrow = itemView.findViewById(R.id.imageView3);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

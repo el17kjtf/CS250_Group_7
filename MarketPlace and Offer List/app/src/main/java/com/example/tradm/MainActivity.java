@@ -3,6 +3,7 @@ package com.example.tradm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference offerRef = db.collection("Offer");
     private DatabaseReference databaseReference;
+    private boolean isItem;
+
+    private Button button_choose_item;
+    private Button button_choose_service;
 
     private OfferAdapter adapter;
 
@@ -37,15 +42,26 @@ public class MainActivity extends AppCompatActivity {
         buttonAddOffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewOfferActivity.class));
+                Intent intent = new Intent(MainActivity.this, NewOfferActivity.class);
+                startActivity(intent);
             }
         });
 
         setUpRecyclerView();
+        button_choose_service = findViewById(R.id.choose_service);
+
+        button_choose_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MarketService.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setUpRecyclerView(){
-        Query query = offerRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = offerRef.orderBy("title", Query.Direction.ASCENDING).whereEqualTo("offerType", "Item").whereEqualTo("offerStatus",
+                "Available");
 
         FirestoreRecyclerOptions<Offer> options = new FirestoreRecyclerOptions.Builder<Offer>()
                 .setQuery(query, Offer.class)
@@ -74,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                 Offer offer = documentSnapshot.toObject(Offer.class);
-                String id = documentSnapshot.getId();
+                //String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
                 Intent intent = new Intent(MainActivity.this, OfferDetail.class);
                 intent.putExtra("OfferPath", path);

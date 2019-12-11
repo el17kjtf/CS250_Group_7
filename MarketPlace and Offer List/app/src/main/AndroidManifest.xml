@@ -9,8 +9,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OfferDetail"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".PersonItem"></activity>
+        <activity android:name=".ServiceDetail" />
+        <activity android:name=".NewService" />
+        <activity android:name=".MarketService" />
+        <activity
+            android:name=".OfferDetail"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".NewOfferActivity"
             android:parentActivityName=".MainActivity" />
