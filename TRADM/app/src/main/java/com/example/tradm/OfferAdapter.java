@@ -29,14 +29,7 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
     protected void onBindViewHolder(@NonNull OfferHolder holder, int position, @NonNull Offer model) {
         holder.textViewTitle.setText(model.getTitle());
         holder.textViewDescription.setText(model.getDescription());
-<<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferAdapter.java
         //Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
-=======
-        holder.textViewOfferStatus.setText(model.getOfferStatus().name());
-        holder.textViewOfferType.setText(model.getOfferType());
-        holder.textViewPrice.setText(String.valueOf(model.getPrice()));
-        Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
->>>>>>> parent of 891c119... zip added:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferAdapter.java
         Picasso.get().load(model.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(holder.imageView);
     }
 
