@@ -7,12 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 <<<<<<< HEAD
-<<<<<<< HEAD
     </style>
 
 =======
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?
 
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
@@ -27,8 +24,5 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-<<<<<<< HEAD
->>>>>>> parent of 3db3a08... Final Commit Maybe?
-=======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
 </resources>
