@@ -9,6 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".OfferDetail"
             android:parentActivityName=".MainActivity"/>
         <activity
@@ -16,6 +17,21 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
+=======
+        <activity android:name=".PersonBuy"></activity>
+        <activity android:name=".PersonSell" />
+        <activity android:name=".ServiceDetail" />
+        <activity android:name=".NewService" />
+        <activity android:name=".MarketService" />
+        <activity
+            android:name=".OfferDetail"
+            android:parentActivityName=".MarketItem" />
+        <activity
+            android:name=".NewOfferActivity"
+            android:parentActivityName=".MarketItem" />
+        <activity
+            android:name=".MarketItem"
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
