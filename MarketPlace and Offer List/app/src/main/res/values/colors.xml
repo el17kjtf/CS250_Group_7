@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
+
+    <color name="orange">#FF9F1C</color>
+    <color name="lightGray">#B9B9B9</color>
+    <color name="black">#000000</color>
+
+    <!--Prominent in Item, Service info page-->
+    <color name="headerGray">#707070</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <!--Messenger Page-->
+    <color name="typeMessageHere">#9D9D9D</color>
+    <color name="bubbleGray">#EAEAEA</color>
+
+<<<<<<< HEAD
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
+</resources>
