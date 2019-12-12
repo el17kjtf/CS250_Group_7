@@ -35,6 +35,7 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
 
     public void deleteItem(int position){
         getSnapshots().getSnapshot(position).getReference().delete();
+
     }
 
     @NonNull

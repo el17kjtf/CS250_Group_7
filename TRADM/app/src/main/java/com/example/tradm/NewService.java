@@ -30,6 +30,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -55,6 +56,9 @@ public class NewService extends AppCompatActivity{
     private Uri imageUri;
     private Upload upload;
 
+    private Member member;
+
+
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
 
@@ -70,11 +74,9 @@ public class NewService extends AppCompatActivity{
         setTitle("Add Offer");
 
         upload_pic = findViewById(R.id.upload_pic);
-        //buttonUpload = findViewById(R.id.button_upload);
         imageView6 = findViewById(R.id.imageView6);
         name_fill = findViewById(R.id.name_fill);
         description_table = findViewById(R.id.description_table);
-        //price_tab = findViewById(R.id.price_tab);
         buttonItem = findViewById(R.id.item);
         buttonService = findViewById(R.id.service);
         cancel = findViewById(R.id.cancel);
@@ -189,7 +191,7 @@ public class NewService extends AppCompatActivity{
         }
 
         CollectionReference offerRef = FirebaseFirestore.getInstance().collection("Offer");
-        offerRef.add(new Offer(title, description, Offer.OfferStat.Available, "Service", 0, upload)); //to change
+        offerRef.add(new Offer(title, description,"Service", 0, upload)); //to change
         Toast.makeText(this, "Offer added", Toast.LENGTH_SHORT).show();
         finish();
     }
