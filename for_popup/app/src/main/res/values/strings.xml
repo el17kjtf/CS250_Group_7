@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">for_popup</string>
-    <string name="go_to_home">Go to Home</string>
-    <string name="order_list">Order List</string>
-    <string name="success">SUCCESS</string>
-    <string name="your_purchase_has_been_confirmed">Your Purchase has\n been confirmed!</string>
-</resources>

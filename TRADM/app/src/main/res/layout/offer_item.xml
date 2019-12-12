@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
-<<<<<<< HEAD
         <TextView
             android:id="@+id/text_view_title"
             android:layout_width="wrap_content"
@@ -35,20 +34,6 @@
             android:ellipsize="end"
             android:text="description"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-=======
-        <ImageView
-            android:id="@+id/item_pic"
-            android:layout_width="90dp"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_height="94dp"
-            android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/apple_watch"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
->>>>>>> parent of 4dac48c... Item_bar status added
 
         <TextView
             android:id="@+id/text_view_offer_type"
@@ -78,24 +63,11 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <ImageView
-<<<<<<< HEAD
             android:id="@+id/image_view_upload"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="80dp" />
 
-=======
-            android:id="@+id/imageView3"
-            android:layout_width="43dp"
-            android:layout_height="43dp"
-            android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_chevron_right_header_gray_24dp" />
->>>>>>> parent of 4dac48c... Item_bar status added
 
     </RelativeLayout>
 
