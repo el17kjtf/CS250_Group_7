@@ -70,6 +70,7 @@ public class NewOfferActivity extends AppCompatActivity implements AdapterView.O
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Add Offer");
 
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
         buttonChooseImage = findViewById(R.id.button_choose_image);
         buttonUpload = findViewById(R.id.button_upload);
         editTextFileName = findViewById(R.id.edit_text_file_name);
@@ -84,6 +85,18 @@ public class NewOfferActivity extends AppCompatActivity implements AdapterView.O
                 R.array.offer_type_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+=======
+        upload_pic = findViewById(R.id.upload_pic);
+        //buttonUpload = findViewById(R.id.button_upload);
+        imageView6 = findViewById(R.id.imageView6);
+        name_fill = findViewById(R.id.name_fill);
+        description_table = findViewById(R.id.description_table);
+        price_tab = findViewById(R.id.price_tab);
+        buttonItem = findViewById(R.id.item);
+        buttonService = findViewById(R.id.service);
+        cancel = findViewById(R.id.cancel);
+        create_offer = findViewById(R.id.create_offer);
+>>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/NewOfferActivity.java
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         databaseReference = FirebaseDatabase.getInstance().getReference("uploads");
@@ -213,7 +226,11 @@ public class NewOfferActivity extends AppCompatActivity implements AdapterView.O
         }
 
         CollectionReference offerRef = FirebaseFirestore.getInstance().collection("Offer");
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
         offerRef.add(new Offer(title, description, Offer.OfferStat.Available, offerType, price, upload)); //to change
+=======
+        offerRef.add(new Offer(title, description, Offer.OfferStat.Available, "Item", price, upload)); //to change
+>>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/NewOfferActivity.java
         Toast.makeText(this, "Offer added", Toast.LENGTH_SHORT).show();
         finish();
     }
