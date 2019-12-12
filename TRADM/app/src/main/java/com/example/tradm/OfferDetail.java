@@ -74,7 +74,8 @@ public class OfferDetail extends AppCompatActivity {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* offer.setBuyerID(); set buyer */
+                offer.setBuyerID(1);
+                offer.setOfferStatus("Pending");
                 finish();
             }
         });

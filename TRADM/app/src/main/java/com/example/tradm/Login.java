@@ -13,15 +13,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
-    EditText emailaddr, password;
-    Button btnSignIn;
-    FirebaseAuth mFireBaseAuth;
+    private EditText emailaddr, password;
+    private Button btnSignIn;
+    private FirebaseAuth mFireBaseAuth;
+
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
@@ -40,8 +46,8 @@ public class Login extends AppCompatActivity {
                 FirebaseUser mFireBaseUser = mFireBaseAuth.getCurrentUser();
                 if ( mFireBaseUser != null) {
                     Toast.makeText(Login.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(Login.this, Home.class);
-                    startActivity(i);
+                    Intent intent = new Intent(Login.this, MarketItem.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(Login.this, "Please Login", Toast.LENGTH_SHORT).show();
                 }
@@ -51,7 +57,7 @@ public class Login extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = emailaddr.getText().toString();
+                final String email = emailaddr.getText().toString();
                 String pwd = password.getText().toString();
                 if (email.isEmpty()) {
                     emailaddr.setError("Please enter Email");
@@ -68,7 +74,8 @@ public class Login extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Login.this, "Login Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(Login.this, Home.class));
+                                Intent intent = new Intent(Login.this, MarketItem.class);
+                                startActivity(new Intent(Login.this, MarketItem.class));
                             }
                         }
                     });

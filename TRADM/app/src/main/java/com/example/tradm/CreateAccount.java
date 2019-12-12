@@ -13,18 +13,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CreateAccount extends AppCompatActivity {
-    EditText emailaddr, password, stud_ID;
-    Button btnSignIn;
-    FirebaseAuth mFireBaseAuth;
-    DatabaseReference reff;
-    Member member;
+    private EditText emailaddr, password, stud_ID;
+    private Button btnSignIn;
+    private FirebaseAuth mFireBaseAuth;
+    private DatabaseReference reff;
+    private Member member;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,7 @@ public class CreateAccount extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = emailaddr.getText().toString();
+                final String email = emailaddr.getText().toString();
                 String pwd = password.getText().toString();
                 String ID = stud_ID.getText().toString();
                 if (email.isEmpty()) {
@@ -62,7 +66,8 @@ public class CreateAccount extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(CreateAccount.this, "Sign Up Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(CreateAccount.this, Home.class));
+                                Intent intent = new Intent(CreateAccount.this, MarketItem.class);
+                                startActivity(intent);
                                 member.setID(stud_ID.getText().toString());
                                 member.setEmail(emailaddr.getText().toString());
                                 reff.push().setValue(member);

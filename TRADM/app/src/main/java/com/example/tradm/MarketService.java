@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,18 +16,17 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.squareup.picasso.Picasso;
 
 public class MarketService extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference offerRef = db.collection("Offer");
-    private DatabaseReference databaseReference;
-    private boolean isItem;
 
     private Button button_choose_item;
-    private Button button_choose_service;
 
     private OfferAdapter adapter;
 
@@ -64,7 +65,7 @@ public class MarketService extends AppCompatActivity {
     }
 
     private void setUpRecyclerView(){
-        Query query = offerRef.orderBy("title", Query.Direction.ASCENDING).whereEqualTo("offerType", "Service");
+        Query query = offerRef.orderBy("title", Query.Direction.ASCENDING).whereEqualTo("offerType", "Service").whereEqualTo("offerStatus","Available");
 
         FirestoreRecyclerOptions<Offer> options = new FirestoreRecyclerOptions.Builder<Offer>()
                 .setQuery(query, Offer.class)
@@ -80,8 +81,6 @@ public class MarketService extends AppCompatActivity {
         adapter.setOnItemClickListener(new OfferAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-                Offer offer = documentSnapshot.toObject(Offer.class);
-                //String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
                 Intent intent = new Intent(MarketService.this, ServiceDetail.class);
                 intent.putExtra("OfferPath", path);
