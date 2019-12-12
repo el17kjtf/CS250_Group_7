@@ -32,15 +32,20 @@
         <activity android:name=".MarketService" />
         <activity
             android:name=".OfferDetail"
+<<<<<<< HEAD
             android:parentActivityName=".MarketItem" />
 =======
         <activity android:name=".OfferDetail"
             android:parentActivityName=".MainActivity"/>
 >>>>>>> parent of e6af9cc... 57
+=======
+            android:parentActivityName=".MainActivity" />
+>>>>>>> parent of ed9069a... Update
         <activity
             android:name=".NewOfferActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+<<<<<<< HEAD
 <<<<<<< HEAD
             android:name=".MarketItem"
 <<<<<<< HEAD
@@ -53,6 +58,9 @@
 =======
             android:name=".MainActivity"
 >>>>>>> parent of e6af9cc... 57
+=======
+            android:name=".MainActivity"
+>>>>>>> parent of ed9069a... Update
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
