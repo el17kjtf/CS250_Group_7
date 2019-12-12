@@ -14,4 +14,8 @@ public class Upload {
     public String getImageUrl() {
         return ImageUrl;
     }
+
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
+    }
 }

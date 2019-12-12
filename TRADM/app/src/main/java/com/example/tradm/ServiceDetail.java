@@ -74,8 +74,7 @@ public class ServiceDetail extends AppCompatActivity {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                offer.setOfferStatus("Pending");
-                offer.setBuyerID(1);
+                /* offer.setBuyerID(); set buyer */
                 finish();
             }
         });
