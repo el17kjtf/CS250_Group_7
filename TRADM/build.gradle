@@ -8,6 +8,7 @@ buildscript {
     }
     dependencies {
 <<<<<<< HEAD
+<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:3.5.2'
 =======
         classpath 'com.android.tools.build:gradle:3.5.3'
@@ -25,6 +26,9 @@ buildscript {
 >>>>>>> parent of fbbf6db... Final commit
 =======
 >>>>>>> parent of fbbf6db... Final commit
+=======
+        classpath 'com.android.tools.build:gradle:3.5.2'
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
 
         classpath 'com.google.gms:google-services:4.3.2'
         

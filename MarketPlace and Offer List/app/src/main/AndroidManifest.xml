@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".OfferDetail"
             android:parentActivityName=".MainActivity"/>
         <activity
@@ -19,6 +20,8 @@
         <activity
             android:name=".MainActivity"
 =======
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
 =======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
         <activity android:name=".PersonBuy"></activity>
@@ -35,6 +38,9 @@
         <activity
             android:name=".MarketItem"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
+=======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
 =======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?

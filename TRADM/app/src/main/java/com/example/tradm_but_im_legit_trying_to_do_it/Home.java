@@ -1,4 +1,4 @@
-package com.example.tradm;
+package com.example.tradm_but_im_legit_trying_to_do_it;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,5 @@
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm_but_im_legit_trying_to_do_it/MainActivity.java
+<<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm_but_im_legit_trying_to_do_it/MainActivity.java
 package com.example.tradm_but_im_legit_trying_to_do_it;
 
 =======
@@ -16,6 +17,10 @@ package com.example.tradm;
 >>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/MainActivity.java
 =======
 >>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/MainActivity.java
+=======
+package com.example.tradm_but_im_legit_trying_to_do_it;
+
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:TRADM/app/src/main/java/com/example/tradm_but_im_legit_trying_to_do_it/MainActivity.java
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

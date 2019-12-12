@@ -74,6 +74,7 @@ public class OfferDetail extends AppCompatActivity {
             }
         });
 <<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 =======
 
         apply.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +92,8 @@ public class OfferDetail extends AppCompatActivity {
             }
         });
 >>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
