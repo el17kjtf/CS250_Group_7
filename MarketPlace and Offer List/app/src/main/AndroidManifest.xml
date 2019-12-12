@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
-<<<<<<< HEAD
         <activity android:name=".PersonBuy"></activity>
         <activity android:name=".PersonSell" />
         <activity android:name=".ServiceDetail" />
@@ -19,10 +18,6 @@
         <activity
             android:name=".OfferDetail"
             android:parentActivityName=".MainActivity" />
-=======
-        <activity android:name=".OfferDetail"
-            android:parentActivityName=".MainActivity"/>
->>>>>>> parent of e6af9cc... 57
 =======
         <activity android:name=".OfferDetail"
             android:parentActivityName=".MainActivity"/>
