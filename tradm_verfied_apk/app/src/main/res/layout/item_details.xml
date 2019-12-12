@@ -91,7 +91,7 @@
                     android:layout_marginTop="23dp"
                     android:background="#FFFFFF"
                     android:fontFamily="@font/proximanova_regular"
-                    android:text="Price"
+                    android:text="@string/item_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#696969"
                     android:textSize="22sp"

@@ -1,336 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".NewOfferActivity">
 
-    <ScrollView
+    <EditText
+        android:id="@+id/edit_text_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:inputType="text" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp">
+    <EditText
+        android:id="@+id/edit_text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:inputType="textMultiLine" />
 
-            <!--TextView
-            android:id="@+id/offercreation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/offer_creation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="734dp" -->
+    <EditText
+        android:id="@+id/edit_text_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="number" />
 
-            <TextView
-                android:id="@+id/tradm_top"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/shadow"
-                android:gravity="center_horizontal"
-                android:elevation="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <Spinner
+        android:id="@+id/spinner_offer_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/description_table"
-                android:layout_width="367dp"
-                android:layout_height="300dp"
-                android:autofillHints=""
-                android:background="@drawable/createacc_login_input_tab"
-                android:ems="10"
-                android:fontFamily="@font/proximanova_regular"
-                android:hint="@string/item_desc"
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine"
-                android:padding="15dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:textColor="@color/lightGray"
-                android:textColorHighlight="@color/black"
-                android:textColorHint="@color/lightGray"
-                android:textColorLink="@color/orange"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description" />
+    <Button
+        android:id="@+id/button_choose_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose File" />
 
-            <TextView
-                android:id="@+id/offer_create"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/proximanova_bold"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/offer_creation"
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.15"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tradm_top"
-                app:layout_constraintVertical_bias="0" />
+    <EditText
+        android:id="@+id/edit_text_file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter File Name" />
 
-            <EditText
-                android:id="@+id/name_fill"
-                android:layout_width="367dp"
-                android:layout_height="50dp"
-                android:autofillHints=""
-                android:background="@drawable/createacc_login_input_tab"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:fontFamily="@font/proximanova_regular"
-                android:hint="@string/name_here"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:padding="15dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textColorHint="@color/lightGray"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                app:layout_constraintVertical_bias="0.0" />
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload" />
 
-            <EditText
-                android:id="@+id/price_tab"
-                android:layout_width="367dp"
-                android:layout_height="50dp"
-                android:background="@drawable/createacc_login_input_tab"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:fontFamily="@font/proximanova_regular"
-                android:hint="@string/krw"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:padding="15dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:textColor="@color/lightGray"
-                android:textColorHighlight="@color/black"
-                android:textColorHint="@color/lightGray"
-                android:textColorLink="@color/orange"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/offer_create">
-
-                <Button
-                    android:id="@+id/service"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/idle_button"
-                    android:fontFamily="@font/proximanova_regular"
-                    android:text="@string/service"
-                    android:textColor="@color/orange"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/item"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/middle_guideline"
-                    tools:ignore="ContentDescription" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/middle_guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.5" />
-
-                <Button
-                    android:id="@+id/item"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_selected"
-                    android:fontFamily="@font/proximanova_regular"
-                    android:text="@string/item"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/middle_guideline"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
-                android:layout_marginBottom="440dp"
-                android:fontFamily="@font/proximanova_regular"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/name"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="23dp"
-                android:fontFamily="@font/proximanova_regular"
-                android:hint="@string/krw"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/price"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.059"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_fill"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/picture"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
-                android:fontFamily="@font/proximanova_regular"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:text="@string/picture"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price_tab"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/create_offer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/rounded_corners"
-                android:fontFamily="@font/proximanova_regular"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/create_offer"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description_table"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/cancel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/cancel_buttons"
-                android:fontFamily="@font/proximanova_regular"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/cancel"
-                android:textColor="@color/lightGray"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_offer" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/picture">
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="48dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="24dp"
-                    android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_image_orange_24dp" />
-
-                <Button
-                    android:id="@+id/upload_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_corners"
-                    android:fontFamily="@font/proximanova_regular"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:text="@string/upload_a_picture"
-                    android:textColor="@color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/imageView6"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.1"
-                    app:layout_constraintStart_toEndOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
-                android:fontFamily="@font/proximanova_regular"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:text="@string/description"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-                app:layout_constraintVertical_bias="0.0" />
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
