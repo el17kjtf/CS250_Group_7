@@ -27,8 +27,13 @@ public class OfferDetail extends AppCompatActivity {
     private static final String TAG = "OfferDetail";
     private TextView textViewTitle;
     private TextView textViewDescription;
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
+=======
+    private TextView textViewOfferType;
+    private TextView textViewOfferStatus;
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 =======
     private TextView textViewOfferType;
     private TextView textViewOfferStatus;
@@ -48,6 +53,7 @@ public class OfferDetail extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("View Offer Details");
 
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
         textViewDescription = findViewById(R.id.textView14);
@@ -58,13 +64,20 @@ public class OfferDetail extends AppCompatActivity {
 =======
 =======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
         textViewTitle = findViewById(R.id.text_view_title_1);
         textViewDescription = findViewById(R.id.text_view_description_1);
         textViewOfferType = findViewById(R.id.text_view_offer_type_1);
         textViewOfferStatus = findViewById(R.id.text_view_offer_status_1);
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
         imageView = findViewById(R.id.image_view_1);
 >>>>>>> parent of 891c119... zip added:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
+=======
+        textViewPrice = findViewById(R.id.text_view_price_1);
+        imageView = findViewById(R.id.image_view_1);
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 =======
         textViewPrice = findViewById(R.id.text_view_price_1);
         imageView = findViewById(R.id.image_view_1);
@@ -84,8 +97,13 @@ public class OfferDetail extends AppCompatActivity {
                         Offer offer = document.toObject(Offer.class);
                         textViewTitle.setText(offer.getTitle());
                         textViewDescription.setText(offer.getDescription());
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
+=======
+                        textViewOfferType.setText(offer.getOfferType());
+                        textViewOfferStatus.setText(offer.getOfferStatus().name());
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 =======
                         textViewOfferType.setText(offer.getOfferType());
                         textViewOfferStatus.setText(offer.getOfferStatus().name());

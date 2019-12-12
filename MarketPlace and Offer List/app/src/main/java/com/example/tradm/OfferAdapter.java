@@ -29,8 +29,14 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
     protected void onBindViewHolder(@NonNull OfferHolder holder, int position, @NonNull Offer model) {
         holder.textViewTitle.setText(model.getTitle());
         holder.textViewDescription.setText(model.getDescription());
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferAdapter.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferAdapter.java
 <<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferAdapter.java
+=======
+        holder.textViewOfferStatus.setText(model.getOfferStatus().name());
+        holder.textViewOfferType.setText(model.getOfferType());
+        holder.textViewPrice.setText(String.valueOf(model.getPrice()));
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferAdapter.java
 =======
         holder.textViewOfferStatus.setText(model.getOfferStatus().name());
         holder.textViewOfferType.setText(model.getOfferType());

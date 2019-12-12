@@ -12,6 +12,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
 =======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
         <activity android:name=".PersonBuy"></activity>
@@ -21,6 +24,7 @@
         <activity android:name=".MarketService" />
         <activity
             android:name=".OfferDetail"
+<<<<<<< HEAD
 <<<<<<< HEAD
             android:parentActivityName=".MainActivity" />
 =======
@@ -37,12 +41,17 @@
         <activity
             android:name=".MainActivity"
 =======
+=======
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
             android:parentActivityName=".MarketItem" />
         <activity
             android:name=".NewOfferActivity"
             android:parentActivityName=".MarketItem" />
         <activity
             android:name=".MarketItem"
+<<<<<<< HEAD
+>>>>>>> parent of 3db3a08... Final Commit Maybe?
+=======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
             android:launchMode="singleTop">
             <intent-filter>
