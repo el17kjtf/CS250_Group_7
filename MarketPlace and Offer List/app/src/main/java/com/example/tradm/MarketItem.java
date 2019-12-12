@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +18,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class MainActivity extends AppCompatActivity {
+public class MarketItem extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference offerRef = db.collection("Offer");
     private DatabaseReference databaseReference;
@@ -34,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_market_item);
 
         FloatingActionButton buttonAddOffer = findViewById(R.id.button_add_offer);
         buttonAddOffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NewOfferActivity.class);
+                Intent intent = new Intent(MarketItem.this, NewOfferActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PersonSell.class);
+                Intent intent = new Intent(MarketItem.this, PersonSell.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         button_choose_service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MarketService.class);
+                Intent intent = new Intent(MarketItem.this, MarketService.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 Offer offer = documentSnapshot.toObject(Offer.class);
                 //String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
-                Intent intent = new Intent(MainActivity.this, OfferDetail.class);
+                Intent intent = new Intent(MarketItem.this, OfferDetail.class);
                 intent.putExtra("OfferPath", path);
                 startActivity(intent);
             }

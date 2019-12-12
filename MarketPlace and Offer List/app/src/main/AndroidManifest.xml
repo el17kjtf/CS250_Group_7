@@ -16,12 +16,12 @@
         <activity android:name=".MarketService" />
         <activity
             android:name=".OfferDetail"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MarketItem" />
         <activity
             android:name=".NewOfferActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MarketItem" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MarketItem"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
