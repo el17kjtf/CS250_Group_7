@@ -49,7 +49,7 @@ public class PersonSell extends AppCompatActivity {
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PersonSell.this, MarketItem.class);
+                Intent intent = new Intent(PersonSell.this, MainActivity.class);
                 startActivity(intent);
             }
         });
