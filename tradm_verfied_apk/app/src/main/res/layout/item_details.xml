@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD:TRADM/app/src/main/res/layout/activity_offer_detail_sell.xml
     android:background="#FFFFFF"
+<<<<<<< HEAD:TRADM/app/src/main/res/layout/activity_offer_detail_sell.xml
+    tools:context=".OfferDetailSell">
+=======
+    android:orientation="vertical"
+    tools:context=".OfferDetail">
+>>>>>>> parent of e6af9cc... 57:MarketPlace and Offer List/app/src/main/res/layout/activity_offer_detail.xml
+=======
     tools:context=".MainActivity">
+>>>>>>> parent of 3db3a08... Final Commit Maybe?:tradm_verfied_apk/app/src/main/res/layout/item_details.xml
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/text_view_title_1"
         android:layout_width="match_parent"
+<<<<<<< HEAD:TRADM/app/src/main/res/layout/activity_offer_detail_sell.xml
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -239,36 +250,51 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView14"
                     tools:ignore="MissingConstraints" />
+=======
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Title"
+        android:paddingBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="230dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/square_outline"
-                    android:contentDescription="@string/todo"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView1"
-                    tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/text_view_description_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="description"
+        android:paddingBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-                <TextView
-                    android:id="@+id/service_name_details"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="9dp"
-                    android:fontFamily="@font/proximanova_regular"
-                    android:text=""
-                    android:textColor="#FF9F1C"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    tools:ignore="MissingConstraints" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+    <TextView
+        android:id="@+id/text_view_offer_type_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="isItem"
+        android:paddingBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+>>>>>>> parent of e6af9cc... 57:MarketPlace and Offer List/app/src/main/res/layout/activity_offer_detail.xml
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/text_view_offer_status_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Offer Status"
+        android:paddingBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/text_view_price_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:paddingBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ImageView
+        android:id="@+id/image_view_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
