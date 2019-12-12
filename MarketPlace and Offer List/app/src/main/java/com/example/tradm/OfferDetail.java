@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,25 +27,25 @@ public class OfferDetail extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "OfferDetail";
-    private TextView textViewTitle;
+    private Offer offer;
     private TextView textViewDescription;
-    private TextView textViewOfferType;
-    private TextView textViewOfferStatus;
+    private TextView textViewPrice;
     private ImageView imageView;
+    private Button cancel;
+    private Button apply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offer_detail);
 
-        Objects.requireNonNull(getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("View Offer Details");
 
-        textViewTitle = findViewById(R.id.text_view_title_1);
-        textViewDescription = findViewById(R.id.text_view_description_1);
-        textViewOfferType = findViewById(R.id.text_view_offer_type_1);
-        textViewOfferStatus = findViewById(R.id.text_view_offer_status_1);
-        imageView = findViewById(R.id.image_view_1);
+        textViewDescription = findViewById(R.id.textView14);
+        textViewPrice = findViewById(R.id.service_name_details);
+        imageView = findViewById(R.id.imageView2);
+        apply = findViewById(R.id.button1);
+        cancel = findViewById(R.id.button);
 
         Intent intent = getIntent();
         String path = intent.getStringExtra("OfferPath");
@@ -56,11 +58,9 @@ public class OfferDetail extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        Offer offer = document.toObject(Offer.class);
-                        textViewTitle.setText(offer.getTitle());
+                        offer = document.toObject(Offer.class);
                         textViewDescription.setText(offer.getDescription());
-                        textViewOfferType.setText(offer.getOfferType());
-                        textViewOfferStatus.setText(offer.getOfferStatus().name());
+                        textViewPrice.setText(String.valueOf(offer.getPrice()));
                         Picasso.get().load(offer.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
                     } else {
                         Log.d(TAG, "No such document");
@@ -70,14 +70,12 @@ public class OfferDetail extends AppCompatActivity {
                 }
             }
         });
-<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
-<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
-=======
 
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* offer.setBuyerID(); set buyer */
+                offer.setBuyerID(1);
+                offer.setOfferStatus(Offer.OfferStat.Sold);
                 finish();
             }
         });
@@ -88,9 +86,6 @@ public class OfferDetail extends AppCompatActivity {
                 finish();
             }
         });
->>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

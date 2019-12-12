@@ -1,14 +1,4 @@
 <resources>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <string name="app_name">TRADM</string>
-=======
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?
     <!--Get Started Page -->
     <string name="app_name">TRADM</string>
     <string name="already_have_an_account">Already have an account?</string>
@@ -57,14 +47,4 @@
     <string name="apply">Apply</string>
     <string name="title_activity_personal_item">PersonalItem</string>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 3db3a08... Final Commit Maybe?
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?
-=======
->>>>>>> parent of 3db3a08... Final Commit Maybe?
-=======
-    <string name="app_name">TRADM</string>
->>>>>>> parent of e6af9cc... 57
 </resources>
