@@ -29,7 +29,12 @@ public class OfferDetail extends AppCompatActivity {
     private static final String TAG = "OfferDetail";
     private Offer offer;
     private TextView textViewDescription;
+<<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
     private TextView textViewPrice;
+=======
+    private TextView textViewOfferType;
+    private TextView textViewOfferStatus;
+>>>>>>> parent of 891c119... zip added:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
     private ImageView imageView;
     private Button cancel;
     private Button apply;
@@ -41,11 +46,19 @@ public class OfferDetail extends AppCompatActivity {
 
         setTitle("View Offer Details");
 
+<<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
         textViewDescription = findViewById(R.id.textView14);
         textViewPrice = findViewById(R.id.service_name_details);
         imageView = findViewById(R.id.imageView2);
         apply = findViewById(R.id.button1);
         cancel = findViewById(R.id.button);
+=======
+        textViewTitle = findViewById(R.id.text_view_title_1);
+        textViewDescription = findViewById(R.id.text_view_description_1);
+        textViewOfferType = findViewById(R.id.text_view_offer_type_1);
+        textViewOfferStatus = findViewById(R.id.text_view_offer_status_1);
+        imageView = findViewById(R.id.image_view_1);
+>>>>>>> parent of 891c119... zip added:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
 
         Intent intent = getIntent();
         String path = intent.getStringExtra("OfferPath");
@@ -60,7 +73,12 @@ public class OfferDetail extends AppCompatActivity {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         offer = document.toObject(Offer.class);
                         textViewDescription.setText(offer.getDescription());
+<<<<<<< HEAD:TRADM/app/src/main/java/com/example/tradm/OfferDetail.java
                         textViewPrice.setText(String.valueOf(offer.getPrice()));
+=======
+                        textViewOfferType.setText(offer.getOfferType());
+                        textViewOfferStatus.setText(offer.getOfferStatus().name());
+>>>>>>> parent of 891c119... zip added:MarketPlace and Offer List/app/src/main/java/com/example/tradm/OfferDetail.java
                         Picasso.get().load(offer.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
                     } else {
                         Log.d(TAG, "No such document");
