@@ -20,47 +20,47 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class MainActivity extends AppCompatActivity {
+public class PersonBuy extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference offerRef = db.collection("Offer");
     private DatabaseReference databaseReference;
     private boolean isItem;
 
-    private Button button_choose_item;
-    private Button button_choose_service;
+    private Button button_choose_buy;
+    private Button button_choose_sell;
 
     private OfferAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_person_buy);
 
         FloatingActionButton buttonAddOffer = findViewById(R.id.button_add_offer);
         buttonAddOffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NewOfferActivity.class);
+                Intent intent = new Intent(PersonBuy.this, NewOfferActivity.class);
                 startActivity(intent);
             }
         });
 
-        FloatingActionButton buttonPersonal = findViewById(R.id.button_personal);
-        buttonPersonal.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton buttonHome = findViewById(R.id.button_personal);
+        buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PersonSell.class);
+                Intent intent = new Intent(PersonBuy.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
         setUpRecyclerView();
-        button_choose_service = findViewById(R.id.choose_service);
+        button_choose_sell = findViewById(R.id.sell);
 
-        button_choose_service.setOnClickListener(new View.OnClickListener() {
+        button_choose_sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MarketService.class);
+                Intent intent = new Intent(PersonBuy.this, PersonSell.class);
                 startActivity(intent);
             }
         });
@@ -75,11 +75,23 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         adapter = new OfferAdapter(options);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(adapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                adapter.deleteItem(viewHolder.getAdapterPosition());
+            }
+        }).attachToRecyclerView(recyclerView);
 
         adapter.setOnItemClickListener(new OfferAdapter.OnItemClickListener() {
             @Override
@@ -87,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 Offer offer = documentSnapshot.toObject(Offer.class);
                 //String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
-                Intent intent = new Intent(MainActivity.this, OfferDetail.class);
+                Intent intent = new Intent(PersonBuy.this, OfferDetail.class);
                 intent.putExtra("OfferPath", path);
                 startActivity(intent);
             }
