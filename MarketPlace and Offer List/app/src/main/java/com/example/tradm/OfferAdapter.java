@@ -32,7 +32,7 @@ public class OfferAdapter extends FirestoreRecyclerAdapter<Offer, OfferAdapter.O
         holder.textViewOfferStatus.setText(model.getOfferStatus().name());
         holder.textViewOfferType.setText(model.getOfferType());
         holder.textViewPrice.setText(String.valueOf(model.getPrice()));
-        //Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
+        Log.d(TAG, "onSuccess: firebase download url: " + model.getUpload().getImageUrl()); //use if testing...don't need this line.
         Picasso.get().load(model.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(holder.imageView);
     }
 

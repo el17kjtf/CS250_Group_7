@@ -29,7 +29,6 @@ public class OfferDetail extends AppCompatActivity {
     private TextView textViewDescription;
     private TextView textViewOfferType;
     private TextView textViewOfferStatus;
-    private TextView textViewPrice;
     private ImageView imageView;
 
     @Override
@@ -44,7 +43,6 @@ public class OfferDetail extends AppCompatActivity {
         textViewDescription = findViewById(R.id.text_view_description_1);
         textViewOfferType = findViewById(R.id.text_view_offer_type_1);
         textViewOfferStatus = findViewById(R.id.text_view_offer_status_1);
-        textViewPrice = findViewById(R.id.text_view_price_1);
         imageView = findViewById(R.id.image_view_1);
 
         Intent intent = getIntent();
@@ -63,7 +61,6 @@ public class OfferDetail extends AppCompatActivity {
                         textViewDescription.setText(offer.getDescription());
                         textViewOfferType.setText(offer.getOfferType());
                         textViewOfferStatus.setText(offer.getOfferStatus().name());
-                        textViewPrice.setText(String.valueOf(offer.getPrice()));
                         Picasso.get().load(offer.getUpload().getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
                     } else {
                         Log.d(TAG, "No such document");
