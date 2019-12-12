@@ -34,6 +34,15 @@ public class ServiceDetailSell extends AppCompatActivity {
     private Button cancel;
     private Button apply;
 
+    private ImageView imageViewPic;
+    private TextView textViewID;
+    private TextView textViewEmail;
+
+    private Member member;
+    private Intent intentUser = getIntent();
+    private String pathUser = intentUser.getStringExtra("User");
+    DocumentReference documentReferenceUser = db.document(pathUser);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +55,14 @@ public class ServiceDetailSell extends AppCompatActivity {
         imageView = findViewById(R.id.imageView2);
         apply = findViewById(R.id.button1);
         cancel = findViewById(R.id.button);
+
+        imageViewPic = findViewById(R.id.prof_picture);
+        textViewID = findViewById(R.id.item_content);
+        textViewEmail = findViewById(R.id.student_email);
+
+        Picasso.get().load(R.mipmap.ic_launcher).fit().centerCrop().into(imageViewPic);
+        textViewID.setText(member.getID());
+        textViewEmail.setText(member.getEmail());
 
         Intent intent = getIntent();
         String path = intent.getStringExtra("OfferPath");
@@ -75,7 +92,7 @@ public class ServiceDetailSell extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 /* offer.setBuyerID(); set buyer */
-                offer.setOfferStatus("Sold");
+                offer.setOfferStatus(Offer.OfferStat.Sold);
                 finish();
             }
         });
@@ -84,8 +101,20 @@ public class ServiceDetailSell extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 offer.setBuyerID(0);
-                offer.setOfferStatus("Available");
+                offer.setOfferStatus(Offer.OfferStat.Available);
                 finish();
+            }
+        });
+
+        documentReferenceUser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        member = document.toObject(Member.class);
+                    }
+                }
             }
         });
     }

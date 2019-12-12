@@ -1,31 +1,26 @@
 package com.example.tradm;
 
 public class Member {
-    private String id;
-    private String email;
+    private String ID;
+    private String Email;
 
     public Member() {
     }
 
-    public Member(String id, String email) {
-        this.id = id;
-        this.email = email;
-    }
-
     public String getID() {
-        return id;
+        return ID;
     }
 
     public void setID(String ID) {
-        this.id = ID;
+        this.ID = ID;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 }
 
