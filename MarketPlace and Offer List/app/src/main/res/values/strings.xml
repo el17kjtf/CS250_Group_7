@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="app_name">TRADM</string>
 =======
 =======
@@ -63,4 +64,7 @@
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
 =======
 >>>>>>> parent of 3db3a08... Final Commit Maybe?
+=======
+    <string name="app_name">TRADM</string>
+>>>>>>> parent of e6af9cc... 57
 </resources>
