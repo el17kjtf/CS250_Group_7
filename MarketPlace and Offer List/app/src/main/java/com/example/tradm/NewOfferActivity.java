@@ -229,7 +229,11 @@ public class NewOfferActivity extends AppCompatActivity implements AdapterView.O
 <<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
 <<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
 <<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
+<<<<<<< HEAD:MarketPlace and Offer List/app/src/main/java/com/example/tradm/NewOfferActivity.java
         offerRef.add(new Offer(title, description, Offer.OfferStat.Available, offerType, price, upload)); //to change
+=======
+        offerRef.add(new Offer(title, description, Offer.OfferStat.Available, "Item", price, upload)); //to change
+>>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/NewOfferActivity.java
 =======
         offerRef.add(new Offer(title, description, Offer.OfferStat.Available, "Item", price, upload)); //to change
 >>>>>>> parent of fbbf6db... Final commit:TRADM/app/src/main/java/com/example/tradm/NewOfferActivity.java
