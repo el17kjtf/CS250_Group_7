@@ -24,9 +24,5 @@ Users must create an account to be able to use the application.
 
 
 This project was created by 
-Nabila Sindi 
-Mohammed Almaazmi
-Kern Flower
-Zihan Qi
-As a final project for CS350: Intro to Software Engineering.
+Nabila Sindi, Mohammed Almaazmi, Kern Flower, Zihan Qi as a final project for CS350: Intro to Software Engineering.
 
