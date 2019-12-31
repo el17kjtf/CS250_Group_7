@@ -1,6 +1,6 @@
 # TRADM
 
-DISCLAIMER: This is the BETA Version, therefore you may encounter bugs. 
+DISCLAIMER: This is the BETA Version, therefore you may encounter bugs. Implementation is still under way.
 
 ## Screenshots
 
